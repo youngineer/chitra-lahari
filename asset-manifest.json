@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/chitra-lahari/static/css/main.95a159f1.css",
+    "main.js": "/chitra-lahari/static/js/main.bf756a8b.js",
+    "static/js/563.c8bc2789.chunk.js": "/chitra-lahari/static/js/563.c8bc2789.chunk.js",
+    "index.html": "/chitra-lahari/index.html",
+    "main.95a159f1.css.map": "/chitra-lahari/static/css/main.95a159f1.css.map",
+    "main.bf756a8b.js.map": "/chitra-lahari/static/js/main.bf756a8b.js.map",
+    "563.c8bc2789.chunk.js.map": "/chitra-lahari/static/js/563.c8bc2789.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.95a159f1.css",
+    "static/js/main.bf756a8b.js"
+  ]
+}
