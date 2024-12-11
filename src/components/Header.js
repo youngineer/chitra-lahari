@@ -1,9 +1,28 @@
-import React from 'react'
-import { clearButton, logo, notificationBell, searchIcon, threeHorizontalLines, userAvatar } from '../utils/Constants';
+import React, { useEffect, useState } from 'react'
+import { clearButton, logo, notificationBell, searchIcon, threeHorizontalLines, userAvatar, YOUTUBE_SEARCH_API } from '../utils/Constants';
 import { useDispatch } from 'react-redux';
 import { toggleMenu } from '../utils/appSlice';
 
 const Header = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const getSearchSuggestions = async() => {
+    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+    const json = await data.json();
+    
+    console.log(json);
+  };
+
+  useEffect(() => {
+    const time = setTimeout(() => (getSearchSuggestions(), 200));
+
+    return (
+      clearTimeout(time)
+    );
+
+  }, [searchQuery]);
+
+
   const dispatch = useDispatch();
 
   const toggleMenuHandler = () => {
@@ -16,7 +35,7 @@ const Header = () => {
       </button>
 
       <button>
-        <img alt="logo" src={logo} className="mx-12 h-12 w-auto"></img>
+        <img alt="logo" src={logo} className="mx-10 h-20 w-auto"></img>
       </button>
 
       <div className="relative flex items-center flex-grow mx-8">
@@ -25,6 +44,8 @@ const Header = () => {
             type="text"
             placeholder="Search..."
             className="w-full pl-3 pr-10 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
           <button className="absolute right-16 top-1/2 -translate-y-1/2">
             <img

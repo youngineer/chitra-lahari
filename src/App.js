@@ -1,3 +1,4 @@
+import React from "react";
 import Body from "./components/Body";
 import Header from "./components/Header";
 import { Provider } from "react-redux";
@@ -7,21 +8,22 @@ import WatchPage from "./components/WatchPage";
 import VideoContainer from "./components/VideoContainer";
 
 
-const appRouter = createBrowserRouter([{
-  path: "/",
-  element: <Body />,
-  children: [
-    {
-      path: "/",
-      element: <VideoContainer />
-    },
-    {
-      path: "/watch",
-      element: <WatchPage />
-    },
-  ]
-}]);
-
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <Body />,
+    children: [
+      {
+        path: "/",
+        element: <VideoContainer />,
+      },
+      {
+        path: "/watch",
+        element: <WatchPage />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (

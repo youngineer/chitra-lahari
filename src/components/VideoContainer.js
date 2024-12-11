@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const VideoContainer = () => {
   const [videos, setVideos] = useState([]);
-  const isMenuOpen = useSelector((store) => store.appSlice.isMenuOpen); 
+  const isMenuOpen = useSelector((state) => state.app.isMenuOpen);
   useEffect(() => {
     getVideo();
   }, []);
@@ -15,6 +15,7 @@ const VideoContainer = () => {
     const data = await fetch(YOUTUBE_VIDEOS_API);
     const json = await data.json();
     setVideos(json.items);
+    console.log(json.items);
   };
 
   return (
