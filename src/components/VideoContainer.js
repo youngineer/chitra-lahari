@@ -19,7 +19,7 @@ const VideoContainer = () => {
   };
 
   return (
-    <div className="flex">
+    <div className="flex m-6">
       <div className="flex-1 flex flex-wrap p-4 m-2">
         {videos.map((video) => (
           <Link 
